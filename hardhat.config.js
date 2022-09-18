@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('hardhat-contract-sizer');
 
 module.exports = {
   solidity: {
@@ -20,6 +21,17 @@ module.exports = {
         mnemonic: `${process.env.MNEMONIC}`
       }
     }
+  },
+
+  contractSizer: {
+    alphaSort: true,
+    disambiguatePaths: false,
+    runOnCompile: true,
+    strict: true
+  },
+
+  mocha: {
+    timeout: 60000
   }
 
 }

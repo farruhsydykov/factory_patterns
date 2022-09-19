@@ -15,7 +15,7 @@ contract MrMeeseeks {
     }
 
     function fullfillPurpose() external {
-        require(msg.sender == owner, 'Only owner can fullfill my purpose');
+        require(msg.sender == owner, "Only owner can fullfill my purpose");
         emit Pfff();
         selfdestruct(payable(msg.sender));
     }

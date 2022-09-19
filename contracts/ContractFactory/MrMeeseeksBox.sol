@@ -14,11 +14,17 @@ contract MrMeeseeksBox {
 
         if (bytes(_purpose).length == 0) {
             if (meeseeks.length > 0) {
-                try MrMeeseeks(meeseeks[meeseeks.length - 1]).purpose() returns (string memory prevPurpose) {
-                    purpose = prevPurpose;
-                } catch  {
-                    noPurpose();
+                uint256 size;
+                address prevMeeseeks = meeseeks[meeseeks.length - 1];
+
+                assembly {
+                    size := extcodesize(prevMeeseeks)
                 }
+
+                if (size != 0) {
+                    purpose = MrMeeseeks(prevMeeseeks).purpose();
+                } else noPurpose();
+
             } else noPurpose();
         } else purpose = _purpose;
 
@@ -34,6 +40,6 @@ contract MrMeeseeksBox {
     // less size than calling `revert('Provide a purpose')` twice.
     // It's a LOT, RIGHT?! :D
     function noPurpose() pure private {
-        revert('Provide a purpose');
+        revert("Provide a purpose");
     }
 }

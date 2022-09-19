@@ -4,7 +4,7 @@ This repo demonstrates factory patterns.
 
 ### Reads:
 [Contract factories and clones  #2](https://soliditydeveloper.com/clonefactory)
-- This shows how contract factories work and dives deeper in clone factories. I recommend this article over the next one because it also shows a need of replacing `constructor` with an `initialize` function in implementation contracts.
+- This article shows how contract factories work and dives deeper in clone factories. I recommend this article over the next one because it also shows a need of replacing `constructor` with an `initialize` function in implementation contracts.
 - __IMPORTANT:__ A repo with CloneFactory given in this article is outdates, I recommend using OpenZeppelin's Clones library
 
 [Learn Solidity: The Factory Pattern](https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29)

@@ -15,3 +15,7 @@ This repo demonstrates factory patterns.
 
 [DelegateCall: Calling Another Contract Function in Solidity](https://medium.com/coinmonks/delegatecall-calling-another-contract-function-in-solidity-b579f804178c)
 - Deep dive to `delegateCall()`
+
+# TODO:
+- Add clone factories and test them
+- Write a short article on this topic

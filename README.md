@@ -7,6 +7,10 @@ This repo demonstrates factory patterns.
 - This article shows how contract factories work and dives deeper in clone factories. I recommend this article over the next one because it also shows a need of replacing `constructor` with an `initialize` function in implementation contracts.
 - __IMPORTANT:__ A repo with CloneFactory given in this article is outdates, I recommend using OpenZeppelin's Clones library
 
+[EIP-1167: Minimal Proxy Contract](https://eips.ethereum.org/EIPS/eip-1167)
+- This is required to understand why OpenZeppelin's Clone factory functions work the way they work.
+    TL;DR: Minimal proxy is SO MINIMAL that the exact code of a contract that delegates any all to the implementation address is: - "363d3d373d3d3d363d73bebebebebebebebebebebebebebebebebebebebe5af43d82803e903d91602b57fd5bf3" where bytes 10-29 (bebebebe...) represent the implementation address. To be honest it took me some time to understant why the hell Clone library's functions did not copy proxy's implementation -_-
+
 [Learn Solidity: The Factory Pattern](https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29)
 - __IMPORTANT:__ A repo with CloneFactory given in this article is outdates, I recommend using OpenZeppelin's Clones library
 

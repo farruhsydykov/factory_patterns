@@ -1,12 +1,17 @@
-const { expect } = require("chai")
-const helpers = require("@nomicfoundation/hardhat-network-helpers")
-const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs")
+import { anyValue }from "@nomicfoundation/hardhat-chai-matchers/withArgs"
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
+import { Contract, ContractFactory } from "ethers"
+import * as helpers from "@nomicfoundation/hardhat-network-helpers"
+import { ethers } from "hardhat"
+import { expect } from "chai"
 
-let MrMeeseeksBox, mrMeeseeksBox
-let deployer, user
-let events
+let MrMeeseeksBox: ContractFactory
+let mrMeeseeksBox: Contract
+let deployer: SignerWithAddress
+let user: SignerWithAddress
+let events: any
 
-async function getMeeseeksInstance(address) {
+async function getMeeseeksInstance(address: string) {
     const MrMeeseeks = await ethers.getContractFactory("MrMeeseeks")
     return new ethers.Contract(
         address,
@@ -52,7 +57,7 @@ describe("MrMeeseeksBox", async () => {
         
         // mutating received array of objects with events
         // so only addresses are left
-        events.map((item, index, array) => {
+        events.map((item: any, index: any, array: any) => {
             array[index] = item.args[3]
         })
     })

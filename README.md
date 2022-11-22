@@ -1,7 +1,5 @@
 # Factory Patters
 
-This repo demonstrates factory patterns.
-
 ### Reads:
 [Contract factories and clones  #2](https://soliditydeveloper.com/clonefactory)
 - This article shows how contract factories work and dives deeper in clone factories. I recommend this article over the next one because it also shows a need of replacing `constructor` with an `initialize` function in implementation contracts.
@@ -21,5 +19,4 @@ This repo demonstrates factory patterns.
 - Deep dive to `delegateCall()`
 
 # TODO:
-- Add clone factories and test them
 - Write a short article on this topic
